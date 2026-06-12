@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.tmp
+*.swp
+*.bak
+
+docs/*.pdf
+docs/*.docx
+docs/*.pptx
+
