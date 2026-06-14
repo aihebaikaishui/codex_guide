@@ -221,12 +221,25 @@ Codex 在这个项目里应该如何工作？
 ## 7. 技术约束
 
 - Python 版本：
-- 包管理方式：
+- Python 包管理与环境管理工具：`uv`
 - 主要框架：
 - 模型调用方式：
 - 数据存储方式：
 - 测试框架：
 - 不希望引入的依赖：
+
+所有 Python 项目统一使用 `uv` 作为包管理器和环境管理工具。
+
+统一规则：
+
+- 使用 `pyproject.toml` 声明项目和依赖
+- 提交并维护 `uv.lock`
+- 使用 `uv python install` 安装 Python，并用 `uv python pin` 固定项目版本
+- 使用 `uv sync` 创建或同步项目环境
+- 使用 `uv add` 和 `uv remove` 增删依赖
+- 使用 `uv run` 运行程序、工具和测试
+- 不直接使用 `pip`、`Poetry` 或 `Conda` 建立另一套依赖或环境管理流程
+- 已有 Python 项目如果使用其他工具，应在确认影响后迁移到 `uv`
 
 ## 8. 安全与成本约束
 
@@ -271,7 +284,7 @@ Codex 在这个项目里应该如何工作？
 要求：
 1. 先阅读 AGENTS.md
 2. 只读分析，不要修改业务代码
-3. 优先阅读 README、pyproject.toml、requirements.txt、src/、tests/ 中必要文件
+3. 优先阅读 README、pyproject.toml、uv.lock、旧依赖文件、src/、tests/ 中必要文件
 4. 不做无意义全仓扫描
 5. 根据已有代码反向总结项目目标、核心功能、技术约束和当前优先级
 6. 如果信息不确定，请标记为“待确认”
@@ -340,6 +353,10 @@ AGENTS.md
 - 优先阅读必要文件
 - 修改前先理解相关上下文
 - 修改后运行相关测试
+- Python 项目统一使用 `uv` 管理 Python、虚拟环境和依赖
+- 依赖操作使用 `uv add`、`uv remove` 或 `uv sync`
+- 程序、工具和测试通过 `uv run` 执行
+- 不直接使用 `pip`、`Poetry` 或 `Conda`
 - 输出保持简洁
 - 不输出长篇推理
 - 不重复解释用户已经确认过的内容
@@ -511,8 +528,10 @@ AGENTS.md
 - 项目类型：本地 Python AI 项目
 - 当前阶段：
 - Python 版本：
-- 包管理方式：
-- 测试命令：
+- Python 包管理与环境管理工具：uv
+- 依赖文件：pyproject.toml、uv.lock
+- 环境同步命令：uv sync
+- 测试命令：uv run pytest
 - 主要入口文件：
 
 ---
@@ -1001,7 +1020,9 @@ Bug 现象：
 允许修改：
 - src/
 - tests/
-- pyproject.toml 或 requirements.txt
+- pyproject.toml
+- uv.lock
+- .python-version
 - README.md
 - docs/project_status.md
 
@@ -1012,11 +1033,13 @@ Bug 现象：
 - 不要执行高风险命令
 
 执行要求：
-1. 先说明最小项目结构
-2. 创建最小可运行版本
-3. 添加一个最小测试
-4. 运行测试
-5. 增量更新 /docs/project_status.md
+1. 使用 `uv` 初始化 Python 项目和虚拟环境
+2. 使用 `pyproject.toml` 声明依赖并生成 `uv.lock`
+3. 先说明最小项目结构
+4. 创建最小可运行版本
+5. 添加一个最小测试
+6. 使用 `uv run pytest` 运行测试
+7. 增量更新 /docs/project_status.md
 ```
 
 ---
