@@ -18,6 +18,7 @@
 - [`面向OPC的codex使用指南.md`](/Users/ghhe/Projects/from_github/codex_guide/面向OPC的codex使用指南.md)
 - [`docs/project_brief.md`](/Users/ghhe/Projects/from_github/codex_guide/docs/project_brief.md)
 - [`docs/project_status.md`](/Users/ghhe/Projects/from_github/codex_guide/docs/project_status.md)
+- [`docs/develop_log.md`](/Users/ghhe/Projects/from_github/codex_guide/docs/develop_log.md)
 
 ## 建议使用方式
 

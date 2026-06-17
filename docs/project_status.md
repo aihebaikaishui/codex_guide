@@ -15,6 +15,7 @@
 - 安全说明 `SECURITY.md`
 - 项目基线 `docs/project_brief.md`
 - 项目状态模板 `docs/project_status.md`
+- 模块开发日志模板 `docs/develop_log.md`
 - Python 项目统一使用 `uv` 的规范
 
 ## 待确认
@@ -33,3 +34,4 @@
 
 - 2026-06-12: 补齐开源仓库基础文件，删除空的 `AGENTS.md`
 - 2026-06-14: 明确 Python 项目统一使用 `uv` 管理环境和依赖
+- 2026-06-17: 补充 `AGENTS.md` 对 `docs/develop_log.md` 的模块开发记录要求
