@@ -35,3 +35,4 @@
 - 2026-06-12: 补齐开源仓库基础文件，删除空的 `AGENTS.md`
 - 2026-06-14: 明确 Python 项目统一使用 `uv` 管理环境和依赖
 - 2026-06-17: 补充 `AGENTS.md` 对 `docs/develop_log.md` 的模块开发记录要求
+- 2026-07-08: 将 `andrej-karpathy-skills` 的核心编码行为原则融合进 `AGENTS.md` 推荐模板
